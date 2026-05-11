@@ -9,9 +9,7 @@ namespace Labirint
 {
     public partial class FormLabirint : Form
     {
-        SoundPlayer completedLevel;
-        SoundPlayer corChoice;
-        SoundPlayer wrongChoice;
+        SoundManager soundManager;
         Level level;
         string lvl;
         int countCorrectAnswer = 0;
@@ -23,42 +21,41 @@ namespace Labirint
             this.StartPosition = FormStartPosition.CenterScreen;
             level = new Level();
             level.LoadLevel(lev);
+            soundManager = new SoundManager();
             lvl = $"lvl{lev}";
             pictureBoxes = this.Controls.OfType<PictureBox>().Reverse().ToArray(); ;
         }
 
         private void FormLabirint_Load(object sender, EventArgs e)
         {
-            completedLevel = new SoundPlayer("Sounds//soundFinishedLevel.wav");
-            corChoice = new SoundPlayer("Sounds//correct_choice.wav");
-            wrongChoice = new SoundPlayer("Sounds//wrong_choice.wav");
             dataGridViewLabirint.RowTemplate.Height = 49;
             CreateField();
             ShowField();
             dataGridViewLabirint.ClearSelection();
+            HidePicures();
+            toolTip1.SetToolTip(labelToolTip, "Используйте ctrl");
+        }
+
+        void HidePicures()
+        {
             pictureBox1.Visible = false;
             pictureBox2.Visible = false;
             pictureBox3.Visible = false;
-            toolTip1.SetToolTip(labelToolTip, "Используйте ctrl");
         }
 
         void ShowField()
         {
-            for(int i = 0; i < 1; i++)
+            pictureBoxes[0].Image = Bitmap.FromFile($"ImagesMeaningsOfWords/{level.Data.PictureBoxImages[0]}.png");
+            pictureBoxes[1].Image = Bitmap.FromFile($"ImagesMeaningsOfWords/{level.Data.PictureBoxImages[1]}.png");
+            pictureBoxes[2].Image = Bitmap.FromFile($"ImagesMeaningsOfWords/{level.Data.PictureBoxImages[2]}.png");
+            for(int j = 0; j < 5; j++)
             {
-               
-                pictureBoxes[i].Image = Bitmap.FromFile($"ImagesMeaningsOfWords/{level.Data.PictureBoxImages[i]}.png");
-                pictureBoxes[i+1].Image = Bitmap.FromFile($"ImagesMeaningsOfWords/{level.Data.PictureBoxImages[i+1]}.png");
-                pictureBoxes[i+2].Image = Bitmap.FromFile($"ImagesMeaningsOfWords/{level.Data.PictureBoxImages[i+2]}.png");
-                for(int j = 0; j < 5; j++)
-                {
-                    dataGridViewLabirint.Rows[i].Cells[j].Value = Bitmap.FromFile($"Images/{level.Data.LvlRandomWord[j]}.png");
-                    dataGridViewLabirint.Rows[i].Cells[j].Tag = level.Data.LvlRandomWord[j];
-                    dataGridViewLabirint.Rows[i+1].Cells[j].Value = Bitmap.FromFile($"ImageThreadsTypeOne/{j + 1}.png");
-                    dataGridViewLabirint.Rows[i+2].Cells[j].Value = Bitmap.FromFile($"ImageThreadsTypeOne/{j + 6}.png");
-                    dataGridViewLabirint.Rows[i+3].Cells[j].Value = Bitmap.FromFile($"Images/6.png");
-                    dataGridViewLabirint.Rows[i+3].Cells[j].Tag = level.Data.LvlWord[j];
-                }
+                dataGridViewLabirint.Rows[0].Cells[j].Value = Bitmap.FromFile($"Images/{level.Data.LvlRandomWord[j]}.png");
+                dataGridViewLabirint.Rows[0].Cells[j].Tag = level.Data.LvlRandomWord[j];
+                dataGridViewLabirint.Rows[1].Cells[j].Value = Bitmap.FromFile($"ImageThreadsTypeOne/{j + 1}.png");
+                dataGridViewLabirint.Rows[2].Cells[j].Value = Bitmap.FromFile($"ImageThreadsTypeOne/{j + 6}.png");
+                dataGridViewLabirint.Rows[3].Cells[j].Value = Bitmap.FromFile($"Images/6.png");
+                dataGridViewLabirint.Rows[3].Cells[j].Tag = level.Data.LvlWord[j];
             }
 
         }
@@ -90,7 +87,7 @@ namespace Labirint
             Control clickObj = sender as Control;
             if (IsCorrectChoice(clickObj.Name))
             {
-                completedLevel.Play();
+                soundManager.PlayCompletedLevel();
                 MessageBox.Show("Ты большой молодец!!. Ты правильно отгадал значение этого слова");
 
                 string progressFile = @"GameLvls\\progress.txt";
@@ -115,24 +112,29 @@ namespace Labirint
                 if ((selectedCellFirst.Tag.ToString() == selectedCellSecond.Tag.ToString()) && (selectedCellFirst.RowIndex != selectedCellSecond.RowIndex) )
                 {
                     countCorrectAnswer++;
-                    corChoice.Play();
+                    soundManager.PlayCorrect();
                     dataGridViewLabirint.Rows[selectedCellFirst.RowIndex].Cells[selectedCellFirst.ColumnIndex].Value = Bitmap.FromFile($"Images/{level.Data.LvlRandomWord[selectedCellSecond.ColumnIndex]}.png");
                     dataGridViewLabirint.ClearSelection();
                     if (countCorrectAnswer == 5)
                     {
                         dataGridViewLabirint.Enabled = false;
                         MessageBox.Show("Поздравляю!! Вы собрали слово полностью. А теперь отгадайте, что значит слово");
-                        pictureBox1.Visible = true;
-                        pictureBox2.Visible = true;
-                        pictureBox3.Visible = true;
+                        ShowPictures();
                     }
                 }
                 else
                 {
-                    wrongChoice.Play();
+                    soundManager.PlayWrong();
                     dataGridViewLabirint.ClearSelection();
                 }
             }
+        }
+
+        void ShowPictures()
+        {
+            pictureBox1.Visible = true;
+            pictureBox2.Visible = true;
+            pictureBox3.Visible = true;
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
