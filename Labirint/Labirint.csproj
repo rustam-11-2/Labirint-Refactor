@@ -79,6 +79,8 @@
     <Compile Include="GameMainMenu.Designer.cs">
       <DependentUpon>GameMainMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Level.cs" />
+    <Compile Include="LevelData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormLabirint.resx">
