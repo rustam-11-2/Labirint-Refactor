@@ -2,25 +2,25 @@
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using System.Media;
 using System.IO;
+using Labirint.Properties;
 
 namespace Labirint
 {
     public partial class FormLabirint : Form
     {
         SoundManager soundManager;
-        Level level;
         string lvl;
         int countCorrectAnswer = 0;
         PictureBox[] pictureBoxes;
+        GameField gameField;
 
         public FormLabirint(int lev)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            level = new Level();
-            level.LoadLevel(lev);
+            
+            gameField = new GameField(lev);
             soundManager = new SoundManager();
             lvl = $"lvl{lev}";
             pictureBoxes = this.Controls.OfType<PictureBox>().Reverse().ToArray(); ;
@@ -29,8 +29,8 @@ namespace Labirint
         private void FormLabirint_Load(object sender, EventArgs e)
         {
             dataGridViewLabirint.RowTemplate.Height = 49;
-            CreateField();
-            ShowField();
+            CreateField(dataGridViewLabirint);
+            ShowField(dataGridViewLabirint, gameField);
             dataGridViewLabirint.ClearSelection();
             HidePicures();
             toolTip1.SetToolTip(labelToolTip, "Используйте ctrl");
@@ -42,41 +42,41 @@ namespace Labirint
             pictureBox2.Visible = false;
             pictureBox3.Visible = false;
         }
-
-        void ShowField()
+        public void CreateField(DataGridView dG)
         {
-            pictureBoxes[0].Image = Bitmap.FromFile($"ImagesMeaningsOfWords/{level.Data.PictureBoxImages[0]}.png");
-            pictureBoxes[1].Image = Bitmap.FromFile($"ImagesMeaningsOfWords/{level.Data.PictureBoxImages[1]}.png");
-            pictureBoxes[2].Image = Bitmap.FromFile($"ImagesMeaningsOfWords/{level.Data.PictureBoxImages[2]}.png");
-            for(int j = 0; j < 5; j++)
-            {
-                dataGridViewLabirint.Rows[0].Cells[j].Value = Bitmap.FromFile($"Images/{level.Data.LvlRandomWord[j]}.png");
-                dataGridViewLabirint.Rows[0].Cells[j].Tag = level.Data.LvlRandomWord[j];
-                dataGridViewLabirint.Rows[1].Cells[j].Value = Bitmap.FromFile($"ImageThreadsTypeOne/{j + 1}.png");
-                dataGridViewLabirint.Rows[2].Cells[j].Value = Bitmap.FromFile($"ImageThreadsTypeOne/{j + 6}.png");
-                dataGridViewLabirint.Rows[3].Cells[j].Value = Bitmap.FromFile($"Images/6.png");
-                dataGridViewLabirint.Rows[3].Cells[j].Tag = level.Data.LvlWord[j];
-            }
-
-        }
-
-        void CreateField()
-        {
-            dataGridViewLabirint.Height = 5 * 40;
-            dataGridViewLabirint.Width = 6 * 40;
+            dG.Height = 5 * 40;
+            dG.Width = 6 * 40;
 
             for (int i = 0; i < 5; i++)
             {
                 var columns = new DataGridViewImageColumn();
                 columns.ImageLayout = DataGridViewImageCellLayout.Zoom;
-                dataGridViewLabirint.Columns.Add(columns);
+               dG.Columns.Add(columns);
             }
-            dataGridViewLabirint.RowCount = 4;
+            dG.RowCount = 4;
+        }
+
+        void ShowField(DataGridView dG, GameField f)
+        {
+            pictureBoxes[0].Image = Bitmap.FromFile($"ImagesMeaningsOfWords/{gameField.Level.PictureBoxImages[0]}.png");
+            pictureBoxes[1].Image = Bitmap.FromFile($"ImagesMeaningsOfWords/{gameField.Level.PictureBoxImages[1]}.png");
+            pictureBoxes[2].Image = Bitmap.FromFile($"ImagesMeaningsOfWords/{gameField.Level.PictureBoxImages[2]}.png");
+
+            for (int i = 0; i < GameField.GAMEMATRIXROWCOUNT; i++)
+            {
+                for(int j = 0; j < f.Level.LvlWord.Length; j++)
+                {
+                    if (gameField.Cells[i,j].Type == CellType.LetterButInvis)
+                        dG.Rows[i].Cells[j].Value = Resources.emptyCell;
+                    else
+                        dG.Rows[i].Cells[j].Value = Resources.ResourceManager.GetObject(f.Matrix(i, j));
+                }
+            }       
         }
 
         bool IsCorrectChoice(string objName)
         {
-            if(objName == pictureBoxes[level.Data.PictureBoxCorrextIndex].Name)
+            if(objName == pictureBoxes[gameField.Level.PictureBoxCorrextIndex].Name)
                 return true;
             else
                 return false;
@@ -104,16 +104,24 @@ namespace Labirint
         {
             if (e.RowIndex == 1 || e.RowIndex == 2)
                 dataGridViewLabirint.ClearSelection();
+
+            MessageBox.Show(gameField.Cells[e.RowIndex, e.ColumnIndex].Type.ToString() + e.RowIndex + e.ColumnIndex );
             if (dataGridViewLabirint.SelectedCells.Count == 2)
             {
                 var selectedCellFirst = dataGridViewLabirint.SelectedCells[0];
                 var selectedCellSecond = dataGridViewLabirint.SelectedCells[1];
 
-                if ((selectedCellFirst.Tag.ToString() == selectedCellSecond.Tag.ToString()) && (selectedCellFirst.RowIndex != selectedCellSecond.RowIndex) )
+                int rowIndFirst = selectedCellFirst.RowIndex;
+                int colIndFirst = selectedCellFirst.ColumnIndex;
+
+                int rowIndSec = selectedCellSecond.RowIndex;
+                int colIndSec = selectedCellSecond.ColumnIndex;
+
+                if (gameField.Cells[rowIndFirst, colIndFirst].Type == CellType.Letter && ( gameField.Matrix(rowIndFirst, colIndFirst) == gameField.Matrix(rowIndSec, colIndSec)) && (rowIndFirst != rowIndSec))
                 {
                     countCorrectAnswer++;
                     soundManager.PlayCorrect();
-                    dataGridViewLabirint.Rows[selectedCellFirst.RowIndex].Cells[selectedCellFirst.ColumnIndex].Value = Bitmap.FromFile($"Images/{level.Data.LvlRandomWord[selectedCellSecond.ColumnIndex]}.png");
+                    dataGridViewLabirint.Rows[rowIndFirst].Cells[colIndFirst].Value = Resources.ResourceManager.GetObject(gameField.Matrix(rowIndFirst, colIndFirst));
                     dataGridViewLabirint.ClearSelection();
                     if (countCorrectAnswer == 5)
                     {

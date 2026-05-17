@@ -1,30 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
+using System.Windows.Forms;
 
 namespace Labirint
 {
     public class Level
     {
-        public LevelData Data { get; private set; }
+        public string[] LvlRandomWord { get ; set; }
+        public string[] LvlWord { get ; set; }
+        public int PictureBoxCorrextIndex { get; set; }
+        public string[] PictureBoxImages { get ; set; }
+        public PictureBox[] PictureBoxes { get; set; }
 
-        public Level()
-        {
-            Data = new LevelData();
-        }
-
+        
         public void LoadLevel(int lvlName)
         {
             string[] lines = File.ReadAllLines($"GameLvls//lvl{lvlName}.txt");
-            Data.LvlRandomWord = lines[0].Split(' ');
-            Data.LvlWord = lines[3].Split(' ');
-            Data.PictureBoxCorrextIndex = Convert.ToInt32(lines[4]);
-            Data.PictureBoxImages = lines[5].Split(' ');
+            LvlRandomWord = lines[0].Split(' ');
+            LvlWord = lines[3].Split(' ');
+            PictureBoxCorrextIndex = Convert.ToInt32(lines[4]);
+            PictureBoxImages = lines[5].Split(' ');
+
         }
 
-
+       
     }
 }
