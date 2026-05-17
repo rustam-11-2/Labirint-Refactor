@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Labirint
@@ -23,6 +24,14 @@ namespace Labirint
 
         }
 
+        public static void SaveProgress(string lvl)
+        {
+            string progressFile = @"GameLvls\\progress.txt";
+
+            string[] completed = File.ReadAllLines(progressFile);
+            if (!completed.Contains(lvl))
+                File.AppendAllText(progressFile, lvl + Environment.NewLine);
+        }
        
     }
 }

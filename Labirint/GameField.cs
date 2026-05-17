@@ -30,6 +30,8 @@ namespace Labirint
                 for(int j = 0; j < gameMatrixColumnCount; j++)
                 {
                     Cells[i, j] = new Cell();
+                    Cells[i, j].X = j;
+                    Cells[i, j].Y = i;
                 }
             }
 
@@ -53,6 +55,29 @@ namespace Labirint
         public string Matrix(int x, int y)
         {
             return Cells[x, y].Letter;
+        }
+
+        public bool CheckAnswer(Cell selectedLetter, Cell answer)
+        {
+            if(selectedLetter.Letter == answer.Letter)
+            {
+                Cells[answer.Y, answer.X].Type = CellType.Letter;
+                return true;
+            }
+            return false;
+        }
+
+        public bool AllLetterWasFind()
+        {
+            int count = 0;
+
+            for(int i = 0; i < gameMatrixColumnCount; i++)
+                if (Cells[3,i].Type == CellType.Letter)
+                    count++;
+
+            if(count == gameMatrixColumnCount)
+                return true;
+            return false;
         }
     }
 }

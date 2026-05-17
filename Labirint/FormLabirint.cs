@@ -11,9 +11,9 @@ namespace Labirint
     {
         SoundManager soundManager;
         string lvl;
-        int countCorrectAnswer = 0;
         PictureBox[] pictureBoxes;
         GameField gameField;
+        Cell selectedLetter;
 
         public FormLabirint(int lev)
         {
@@ -32,15 +32,15 @@ namespace Labirint
             CreateField(dataGridViewLabirint);
             ShowField(dataGridViewLabirint, gameField);
             dataGridViewLabirint.ClearSelection();
-            HidePicures();
+            OnOffPicures();
             toolTip1.SetToolTip(labelToolTip, "Используйте ctrl");
         }
 
-        void HidePicures()
+        void OnOffPicures()
         {
-            pictureBox1.Visible = false;
-            pictureBox2.Visible = false;
-            pictureBox3.Visible = false;
+            pictureBox1.Visible = pictureBox1.Visible == true ? false: true;
+            pictureBox2.Visible = pictureBox2.Visible == true ? false : true;
+            pictureBox3.Visible = pictureBox3.Visible == true ? false : true;
         }
         public void CreateField(DataGridView dG)
         {
@@ -58,9 +58,8 @@ namespace Labirint
 
         void ShowField(DataGridView dG, GameField f)
         {
-            pictureBoxes[0].Image = Bitmap.FromFile($"ImagesMeaningsOfWords/{gameField.Level.PictureBoxImages[0]}.png");
-            pictureBoxes[1].Image = Bitmap.FromFile($"ImagesMeaningsOfWords/{gameField.Level.PictureBoxImages[1]}.png");
-            pictureBoxes[2].Image = Bitmap.FromFile($"ImagesMeaningsOfWords/{gameField.Level.PictureBoxImages[2]}.png");
+            for (int i = 0; i < pictureBoxes.Length; i++)
+                pictureBoxes[i].Image = (Image)Resources.ResourceManager.GetObject(gameField.Level.PictureBoxImages[i]);
 
             for (int i = 0; i < GameField.GAMEMATRIXROWCOUNT; i++)
             {
@@ -90,11 +89,7 @@ namespace Labirint
                 soundManager.PlayCompletedLevel();
                 MessageBox.Show("Ты большой молодец!!. Ты правильно отгадал значение этого слова");
 
-                string progressFile = @"GameLvls\\progress.txt";
-
-                string[] completed = File.ReadAllLines(progressFile);
-                if (!completed.Contains(lvl))
-                    File.AppendAllText(progressFile, lvl + Environment.NewLine);
+                Level.SaveProgress(lvl);
             }
             else
                 MessageBox.Show("Почти отгадал. Но это слово значит что-то другое");
@@ -103,46 +98,38 @@ namespace Labirint
         private void dataGridViewLabirint_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex == 1 || e.RowIndex == 2)
+            { 
                 dataGridViewLabirint.ClearSelection();
+                return;
+            }
 
-            MessageBox.Show(gameField.Cells[e.RowIndex, e.ColumnIndex].Type.ToString() + e.RowIndex + e.ColumnIndex );
-            if (dataGridViewLabirint.SelectedCells.Count == 2)
+            Cell cell = new Cell();
+            cell = gameField.Cells[e.RowIndex, e.ColumnIndex];
+
+            if(cell.Type == CellType.Letter)
             {
-                var selectedCellFirst = dataGridViewLabirint.SelectedCells[0];
-                var selectedCellSecond = dataGridViewLabirint.SelectedCells[1];
+                selectedLetter = cell;
+                return;
+            }
 
-                int rowIndFirst = selectedCellFirst.RowIndex;
-                int colIndFirst = selectedCellFirst.ColumnIndex;
+            if(cell.Type == CellType.LetterButInvis)
+                if (selectedLetter == null)
+                    return;
 
-                int rowIndSec = selectedCellSecond.RowIndex;
-                int colIndSec = selectedCellSecond.ColumnIndex;
+            if(gameField.CheckAnswer(selectedLetter, cell))
+            {
+                soundManager.PlayCorrect();
+                dataGridViewLabirint.Rows[cell.Y].Cells[cell.X].Value = Resources.ResourceManager.GetObject(selectedLetter.Letter);
 
-                if (gameField.Cells[rowIndFirst, colIndFirst].Type == CellType.Letter && ( gameField.Matrix(rowIndFirst, colIndFirst) == gameField.Matrix(rowIndSec, colIndSec)) && (rowIndFirst != rowIndSec))
+                if (gameField.AllLetterWasFind())
                 {
-                    countCorrectAnswer++;
-                    soundManager.PlayCorrect();
-                    dataGridViewLabirint.Rows[rowIndFirst].Cells[colIndFirst].Value = Resources.ResourceManager.GetObject(gameField.Matrix(rowIndFirst, colIndFirst));
-                    dataGridViewLabirint.ClearSelection();
-                    if (countCorrectAnswer == 5)
-                    {
-                        dataGridViewLabirint.Enabled = false;
-                        MessageBox.Show("Поздравляю!! Вы собрали слово полностью. А теперь отгадайте, что значит слово");
-                        ShowPictures();
-                    }
-                }
-                else
-                {
-                    soundManager.PlayWrong();
-                    dataGridViewLabirint.ClearSelection();
+                    dataGridViewLabirint.Enabled = false;
+                    MessageBox.Show("Поздравляю!! Вы собрали слово полностью. А теперь отгадайте, что значит это слово");
+                    OnOffPicures();
                 }
             }
-        }
-
-        void ShowPictures()
-        {
-            pictureBox1.Visible = true;
-            pictureBox2.Visible = true;
-            pictureBox3.Visible = true;
+            else
+                soundManager.PlayWrong();
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
