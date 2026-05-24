@@ -65,7 +65,7 @@ namespace Labirint
             {
                 for(int j = 0; j < f.Level.LvlWord.Length; j++)
                 {
-                    if (gameField.Cells[i,j].Type == CellType.LetterButInvis)
+                    if (gameField.Cells[i,j].Type == CellType.EmptyCell)
                         dG.Rows[i].Cells[j].Value = Resources.emptyCell;
                     else
                         dG.Rows[i].Cells[j].Value = Resources.ResourceManager.GetObject(f.Matrix(i, j));
@@ -112,7 +112,7 @@ namespace Labirint
                 return;
             }
 
-            if(cell.Type == CellType.LetterButInvis)
+            if(cell.Type == CellType.EmptyCell)
                 if (selectedLetter == null)
                     return;
 

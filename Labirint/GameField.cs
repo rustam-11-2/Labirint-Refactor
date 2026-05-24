@@ -48,7 +48,7 @@ namespace Labirint
                 Cells[2, i].Letter = $"{i+1 + gameMatrixColumnCount}";
                 Cells[2, i].Type = CellType.Thread;
                 Cells[3, i].Letter = Level.LvlWord[i];
-                Cells[3, i].Type = CellType.LetterButInvis;
+                Cells[3, i].Type = CellType.EmptyCell;
             }
         }
 

@@ -10,7 +10,7 @@ namespace Labirint
     {
         Letter,
         Thread,
-        LetterButInvis
+        EmptyCell
     }
 
     public class Cell
