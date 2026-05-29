@@ -64,6 +64,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cell.cs" />
+    <Compile Include="CreateNewLevelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateNewLevelForm.Designer.cs">
+      <DependentUpon>CreateNewLevelForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLabirint.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SoundManager.cs" />
+    <EmbeddedResource Include="CreateNewLevelForm.resx">
+      <DependentUpon>CreateNewLevelForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLabirint.resx">
       <DependentUpon>FormLabirint.cs</DependentUpon>
     </EmbeddedResource>

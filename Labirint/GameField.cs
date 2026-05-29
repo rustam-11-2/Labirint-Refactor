@@ -5,7 +5,8 @@ namespace Labirint
 {
     public class GameField
     {
-        public const int GAMEMATRIXROWCOUNT = 4;
+        public int GAMEMATRIXROWCOUNT { get { return 4; } }
+        
         int gameMatrixColumnCount;
         
         public Cell[,] Cells;

@@ -17,10 +17,10 @@ namespace Labirint
         public void LoadLevel(int lvlName)
         {
             string[] lines = File.ReadAllLines($"GameLvls//lvl{lvlName}.txt");
-            LvlRandomWord = lines[0].Split(' ');
-            LvlWord = lines[3].Split(' ');
-            PictureBoxCorrextIndex = Convert.ToInt32(lines[4]);
-            PictureBoxImages = lines[5].Split(' ');
+            LvlRandomWord = lines[0].TrimEnd().Split();
+            LvlWord = lines[3].TrimEnd().Split();
+            PictureBoxCorrextIndex = Convert.ToInt32(lines[4].TrimEnd());
+            PictureBoxImages = lines[5].TrimEnd().Split();
 
         }
 

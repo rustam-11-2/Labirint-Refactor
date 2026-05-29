@@ -33,8 +33,8 @@
             this.buttonlvl3 = new System.Windows.Forms.Button();
             this.labelLvl = new System.Windows.Forms.Label();
             this.buttonBackToMenu = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanelLevels = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanelLevels.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonlvl1
@@ -110,22 +110,22 @@
             this.buttonBackToMenu.UseVisualStyleBackColor = true;
             this.buttonBackToMenu.Click += new System.EventHandler(this.buttonBackToMenu_Click);
             // 
-            // tableLayoutPanel1
+            // tableLayoutPanelLevels
             // 
-            this.tableLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Controls.Add(this.buttonlvl1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.buttonlvl2, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.buttonlvl3, 2, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(40, 101);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(515, 77);
-            this.tableLayoutPanel1.TabIndex = 5;
+            this.tableLayoutPanelLevels.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tableLayoutPanelLevels.ColumnCount = 3;
+            this.tableLayoutPanelLevels.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanelLevels.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanelLevels.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanelLevels.Controls.Add(this.buttonlvl1, 0, 0);
+            this.tableLayoutPanelLevels.Controls.Add(this.buttonlvl2, 1, 0);
+            this.tableLayoutPanelLevels.Controls.Add(this.buttonlvl3, 2, 0);
+            this.tableLayoutPanelLevels.Location = new System.Drawing.Point(40, 101);
+            this.tableLayoutPanelLevels.Name = "tableLayoutPanelLevels";
+            this.tableLayoutPanelLevels.RowCount = 1;
+            this.tableLayoutPanelLevels.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelLevels.Size = new System.Drawing.Size(515, 77);
+            this.tableLayoutPanelLevels.TabIndex = 5;
             // 
             // FormLevelSelect
             // 
@@ -133,14 +133,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(594, 478);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.tableLayoutPanelLevels);
             this.Controls.Add(this.buttonBackToMenu);
             this.Controls.Add(this.labelLvl);
             this.Name = "FormLevelSelect";
             this.Text = "Выбор уровня";
             this.Load += new System.EventHandler(this.FormLevelSelect_Load);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanelLevels.ResumeLayout(false);
+            this.tableLayoutPanelLevels.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -153,6 +153,6 @@
         private System.Windows.Forms.Button buttonlvl3;
         private System.Windows.Forms.Label labelLvl;
         private System.Windows.Forms.Button buttonBackToMenu;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelLevels;
     }
 }

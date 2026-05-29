@@ -18,7 +18,7 @@ namespace Labirint
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            buttons = tableLayoutPanel1.Controls.OfType<Button>().ToArray();
+            buttons = tableLayoutPanelLevels.Controls.OfType<Button>().ToArray();
         }
 
         private void buttonlvl1_Click(object sender, EventArgs e)

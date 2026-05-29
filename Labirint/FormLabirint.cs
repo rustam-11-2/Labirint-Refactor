@@ -38,10 +38,11 @@ namespace Labirint
 
         void OnOffPicures()
         {
-            pictureBox1.Visible = pictureBox1.Visible == true ? false: true;
+            pictureBox1.Visible = pictureBox1.Visible == true ? false : true;
             pictureBox2.Visible = pictureBox2.Visible == true ? false : true;
             pictureBox3.Visible = pictureBox3.Visible == true ? false : true;
         }
+
         public void CreateField(DataGridView dG)
         {
             dG.Height = 5 * 40;
@@ -51,9 +52,10 @@ namespace Labirint
             {
                 var columns = new DataGridViewImageColumn();
                 columns.ImageLayout = DataGridViewImageCellLayout.Zoom;
-               dG.Columns.Add(columns);
+                dG.Columns.Add(columns);
             }
-            dG.RowCount = 4;
+
+            dG.RowCount = gameField.GAMEMATRIXROWCOUNT;
         }
 
         void ShowField(DataGridView dG, GameField f)
@@ -61,7 +63,7 @@ namespace Labirint
             for (int i = 0; i < pictureBoxes.Length; i++)
                 pictureBoxes[i].Image = (Image)Resources.ResourceManager.GetObject(gameField.Level.PictureBoxImages[i]);
 
-            for (int i = 0; i < GameField.GAMEMATRIXROWCOUNT; i++)
+            for (int i = 0; i < gameField.GAMEMATRIXROWCOUNT; i++)
             {
                 for(int j = 0; j < f.Level.LvlWord.Length; j++)
                 {
