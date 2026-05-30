@@ -33,7 +33,6 @@ namespace Labirint
             ShowField(dataGridViewLabirint, gameField);
             dataGridViewLabirint.ClearSelection();
             OnOffPicures();
-            toolTip1.SetToolTip(labelToolTip, "Используйте ctrl");
         }
 
         void OnOffPicures()
