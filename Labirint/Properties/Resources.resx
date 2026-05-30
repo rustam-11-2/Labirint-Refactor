@@ -148,38 +148,8 @@
   <data name="10" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ImageThreadsTypeOne\10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="book" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ImagesMeaningsOfWords\book.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="donkey" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ImagesMeaningsOfWords\donkey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="emptyCell" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="fish" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ImagesMeaningsOfWords\fish.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="glasses" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ImagesMeaningsOfWords\glasses.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="mouse" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ImagesMeaningsOfWords\mouse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="phone" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ImagesMeaningsOfWords\phone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pillow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ImagesMeaningsOfWords\pillow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pumpkin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ImagesMeaningsOfWords\pumpkin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tree" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ImagesMeaningsOfWords\tree.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="wing" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\ImagesMeaningsOfWords\wing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="æ" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\æ.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

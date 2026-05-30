@@ -60,7 +60,7 @@ namespace Labirint
         void ShowField(DataGridView dG, GameField f)
         {
             for (int i = 0; i < pictureBoxes.Length; i++)
-                pictureBoxes[i].Image = (Image)Resources.ResourceManager.GetObject(gameField.Level.PictureBoxImages[i]);
+                pictureBoxes[i].Image = Bitmap.FromFile($"ImagesMeaningsOfWords\\{gameField.Level.PictureBoxImages[i]}.png");
 
             for (int i = 0; i < gameField.GAMEMATRIXROWCOUNT; i++)
             {
