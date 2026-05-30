@@ -46,5 +46,16 @@ namespace Labirint
         {
             CreateNewLvl(); 
         }
+
+        private void buttonSaveImageFirst_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "Изображения (*.png)|*.png";
+            openFileDialog1.FileName = "";
+
+            if(openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                File.Copy(openFileDialog1.FileName, openFileDialog1.FileName);
+            }
+        }
     }
 }

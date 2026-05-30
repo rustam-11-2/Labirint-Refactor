@@ -37,9 +37,8 @@ namespace Labirint
 
         void OnOffPicures()
         {
-            pictureBox1.Visible = pictureBox1.Visible == true ? false : true;
-            pictureBox2.Visible = pictureBox2.Visible == true ? false : true;
-            pictureBox3.Visible = pictureBox3.Visible == true ? false : true;
+            for(int i = 0; i < pictureBoxes.Length; i++)
+                pictureBoxes[i].Visible = pictureBoxes[i].Visible == true ? false : true;
         }
 
         public void CreateField(DataGridView dG)
@@ -135,10 +134,6 @@ namespace Labirint
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
-            //FormLevelSelect formLevel = new FormLevelSelect();
-            //this.Close();
-            //formLevel.Visible = true;
-
             NewFormSelectLvl newFormSelectLvl = new NewFormSelectLvl();
             this.Close();
             newFormSelectLvl.Visible = true;
