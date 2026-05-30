@@ -42,10 +42,11 @@
             this.buttonlvl1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonlvl1.AutoSize = true;
             this.buttonlvl1.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonlvl1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.buttonlvl1.Font = new System.Drawing.Font("Century", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonlvl1.Location = new System.Drawing.Point(33, 15);
+            this.buttonlvl1.Location = new System.Drawing.Point(31, 15);
             this.buttonlvl1.Name = "buttonlvl1";
-            this.buttonlvl1.Size = new System.Drawing.Size(104, 47);
+            this.buttonlvl1.Size = new System.Drawing.Size(108, 47);
             this.buttonlvl1.TabIndex = 0;
             this.buttonlvl1.TabStop = false;
             this.buttonlvl1.Tag = "lvl1";

@@ -37,8 +37,9 @@
             // 
             this.buttonExit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExit.Font = new System.Drawing.Font("Century", 18F);
-            this.buttonExit.Location = new System.Drawing.Point(165, 334);
+            this.buttonExit.Location = new System.Drawing.Point(165, 288);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(264, 75);
             this.buttonExit.TabIndex = 1;
@@ -51,8 +52,9 @@
             // 
             this.buttonLevels.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonLevels.BackColor = System.Drawing.Color.Green;
+            this.buttonLevels.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLevels.Font = new System.Drawing.Font("Century", 18F);
-            this.buttonLevels.Location = new System.Drawing.Point(165, 186);
+            this.buttonLevels.Location = new System.Drawing.Point(165, 139);
             this.buttonLevels.Name = "buttonLevels";
             this.buttonLevels.Size = new System.Drawing.Size(264, 75);
             this.buttonLevels.TabIndex = 0;
@@ -66,7 +68,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(216, 70);
+            this.label1.Location = new System.Drawing.Point(216, 46);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(162, 35);
             this.label1.TabIndex = 2;

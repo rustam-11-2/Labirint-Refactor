@@ -20,9 +20,9 @@ namespace Labirint
 
         private void buttonLevels_Click(object sender, EventArgs e)
         {
-            FormLevelSelect formLevelSelect = new FormLevelSelect();
+            NewFormSelectLvl newFormSelectLvl = new NewFormSelectLvl();
             this.Hide();
-            formLevelSelect.Show();
+            newFormSelectLvl.Show();
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
