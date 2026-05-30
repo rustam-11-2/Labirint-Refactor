@@ -90,6 +90,12 @@
       <DependentUpon>GameMainMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Level.cs" />
+    <Compile Include="NewFormSelectLvl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewFormSelectLvl.Designer.cs">
+      <DependentUpon>NewFormSelectLvl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SoundManager.cs" />
@@ -104,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GameMainMenu.resx">
       <DependentUpon>GameMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewFormSelectLvl.resx">
+      <DependentUpon>NewFormSelectLvl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

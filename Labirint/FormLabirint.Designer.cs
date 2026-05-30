@@ -36,7 +36,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.labelToolTip = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLabirint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -84,7 +83,7 @@
             this.buttonBack.AutoSize = true;
             this.buttonBack.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.buttonBack.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonBack.Location = new System.Drawing.Point(40, 399);
+            this.buttonBack.Location = new System.Drawing.Point(12, 433);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(79, 33);
             this.buttonBack.TabIndex = 5;
@@ -126,23 +125,11 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.GetWin);
             // 
-            // labelToolTip
-            // 
-            this.labelToolTip.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelToolTip.AutoSize = true;
-            this.labelToolTip.Font = new System.Drawing.Font("Century", 12F);
-            this.labelToolTip.Location = new System.Drawing.Point(447, 399);
-            this.labelToolTip.Name = "labelToolTip";
-            this.labelToolTip.Size = new System.Drawing.Size(112, 23);
-            this.labelToolTip.TabIndex = 6;
-            this.labelToolTip.Text = "Подсказка";
-            // 
             // FormLabirint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(594, 478);
-            this.Controls.Add(this.labelToolTip);
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
@@ -171,7 +158,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.Label labelToolTip;
     }
 }
 

@@ -33,7 +33,6 @@ namespace Labirint
             ShowField(dataGridViewLabirint, gameField);
             dataGridViewLabirint.ClearSelection();
             OnOffPicures();
-            toolTip1.SetToolTip(labelToolTip, "Используйте ctrl");
         }
 
         void OnOffPicures()
@@ -136,9 +135,13 @@ namespace Labirint
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
-            FormLevelSelect formLevel = new FormLevelSelect();
+            //FormLevelSelect formLevel = new FormLevelSelect();
+            //this.Close();
+            //formLevel.Visible = true;
+
+            NewFormSelectLvl newFormSelectLvl = new NewFormSelectLvl();
             this.Close();
-            formLevel.Visible = true;
+            newFormSelectLvl.Visible = true;
         }
     }
 }
