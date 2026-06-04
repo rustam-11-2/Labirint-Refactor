@@ -46,10 +46,9 @@ namespace Labirint
             dG.Height = 5 * 40;
             dG.Width = 6 * 40;
 
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < gameField.Level.LvlRandomWord.Length; i++)
             {
                 var columns = new DataGridViewImageColumn();
-                columns.ImageLayout = DataGridViewImageCellLayout.Zoom;
                 dG.Columns.Add(columns);
             }
 
@@ -97,6 +96,8 @@ namespace Labirint
 
         private void dataGridViewLabirint_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            Rectangle rec = dataGridViewLabirint.GetCellDisplayRectangle(0, 0, false);
+            MessageBox.Show($"{rec.Height} {rec.Width}");
             if (e.RowIndex == 1 || e.RowIndex == 2)
             { 
                 dataGridViewLabirint.ClearSelection();

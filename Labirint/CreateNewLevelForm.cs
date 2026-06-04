@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -52,9 +53,12 @@ namespace Labirint
             openFileDialog1.Filter = "Изображения (*.png)|*.png";
             openFileDialog1.FileName = "";
 
-            if(openFileDialog1.ShowDialog() == DialogResult.OK)
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                File.Copy(openFileDialog1.FileName, openFileDialog1.FileName);
+                string destFileName = $"ImagesMeaningsOfWords\\{openFileDialog1.SafeFileName}";
+                File.Copy(openFileDialog1.FileName, destFileName, true);
+                pictureBox1.Image = Bitmap.FromFile(destFileName);
             }
         }
     }
