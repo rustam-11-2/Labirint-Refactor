@@ -15,16 +15,10 @@ namespace Labirint
         string ShuffleStringTypeOne(string word)
         {
             char[] chars = word.ToCharArray();
-            //Random random = new Random();
-
-            //for(int i = chars.Length-1; i>0; i--)
-            //{
-            //    int j = random.Next(i+1);
-            //    (chars[i], chars[j]) = (chars[j], chars[i]);
-            //}
-            //return new string(chars);
 
             (chars[0], chars[4]) = (chars[4], chars[0]);
+            (chars[1], chars[2]) = (chars[2], chars[1]);
+
             return new string(chars);
         }
 

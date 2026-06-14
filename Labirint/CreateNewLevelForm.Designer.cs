@@ -45,11 +45,11 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(567, 188);
+            this.button1.Location = new System.Drawing.Point(652, 315);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(146, 23);
             this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
+            this.button1.Text = "Сохранить уровень";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -72,7 +72,7 @@
             this.buttonSaveImageFirst.Name = "buttonSaveImageFirst";
             this.buttonSaveImageFirst.Size = new System.Drawing.Size(179, 23);
             this.buttonSaveImageFirst.TabIndex = 3;
-            this.buttonSaveImageFirst.Text = "Сохранить изображение";
+            this.buttonSaveImageFirst.Text = "Добавить изображение";
             this.buttonSaveImageFirst.UseVisualStyleBackColor = true;
             this.buttonSaveImageFirst.Click += new System.EventHandler(this.buttonSaveImageFirst_Click);
             // 
