@@ -16,8 +16,8 @@ namespace Labirint
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GameMainMenu());
-            //Application.Run(new CreateNewLevelForm());
+            //Application.Run(new GameMainMenu());
+            Application.Run(new CreateNewLevelForm());
         }
     }
 }

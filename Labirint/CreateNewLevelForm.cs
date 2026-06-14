@@ -12,16 +12,19 @@ namespace Labirint
             InitializeComponent();
         }
 
-        string ShuffleString(string word)
+        string ShuffleStringTypeOne(string word)
         {
             char[] chars = word.ToCharArray();
-            Random random = new Random();
+            //Random random = new Random();
 
-            for(int i = chars.Length-1; i>0; i--)
-            {
-                int j = random.Next(i+1);
-                (chars[i], chars[j]) = (chars[j], chars[i]);
-            }
+            //for(int i = chars.Length-1; i>0; i--)
+            //{
+            //    int j = random.Next(i+1);
+            //    (chars[i], chars[j]) = (chars[j], chars[i]);
+            //}
+            //return new string(chars);
+
+            (chars[0], chars[4]) = (chars[4], chars[0]);
             return new string(chars);
         }
 
@@ -31,7 +34,12 @@ namespace Labirint
             string answer = textBoxAnswer.Text;
             if (!string.IsNullOrEmpty(answer))
             {
-                string randomWord = ShuffleString(answer);
+                string randomWord = "";
+                switch (answer.Length)
+                {
+                    case 5: randomWord = ShuffleStringTypeOne(answer); break;
+
+                }
                 //for(int i = 0; i<answer.Length; i++)
                 //{
                     File.AppendAllText(@$"GameLvls\\lvl{countLvl}.txt", string.Join(" ", randomWord) + Environment.NewLine);
