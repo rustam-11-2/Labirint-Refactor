@@ -32,14 +32,9 @@ namespace Labirint
                 switch (answer.Length)
                 {
                     case 5: randomWord = ShuffleStringTypeOne(answer); break;
-
                 }
-                //for(int i = 0; i<answer.Length; i++)
-                //{
-                    File.AppendAllText(@$"GameLvls\\lvl{countLvl}.txt", string.Join(" ", randomWord) + Environment.NewLine);
 
-                //}
-                //File.AppendAllText(@$"GameLvls\\lvl{countLvl}.txt", randomWord + Environment.NewLine);
+                File.AppendAllText(@$"GameLvls\\lvl{countLvl}.txt", string.Join(" ", randomWord) + Environment.NewLine);
                 File.AppendAllText(@$"GameLvls\\lvl{countLvl}.txt", answer + Environment.NewLine);
 
             }

@@ -40,13 +40,22 @@ namespace Labirint
         
         void CreateMatrix()
         {
+            int typeThread = 0;
+
+            switch (gameMatrixColumnCount)
+            {
+                case 5: typeThread = 1; break;
+                case 6: typeThread = 2; break;
+                case 7: typeThread = 3; break;
+            }
+
             for(int i = 0; i < gameMatrixColumnCount; i++)
             {
                 Cells[0, i].Letter = Level.LvlRandomWord[i];
                 Cells[0, i].Type = CellType.Letter;
-                Cells[1, i].Letter = $"{i+1}";
+                Cells[1, i].Letter = $"{typeThread}.{i + 1}";
                 Cells[1, i].Type = CellType.Thread;
-                Cells[2, i].Letter = $"{i+1 + gameMatrixColumnCount}";
+                Cells[2, i].Letter = $"{typeThread}.{i + 1 + gameMatrixColumnCount}";
                 Cells[2, i].Type = CellType.Thread;
                 Cells[3, i].Letter = Level.LvlWord[i];
                 Cells[3, i].Type = CellType.EmptyCell;

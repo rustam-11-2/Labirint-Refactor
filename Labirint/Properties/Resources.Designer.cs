@@ -63,9 +63,9 @@ namespace Labirint.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _1 {
+        internal static System.Drawing.Bitmap _1_1 {
             get {
-                object obj = ResourceManager.GetObject("1", resourceCulture);
+                object obj = ResourceManager.GetObject("1.1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace Labirint.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _10 {
+        internal static System.Drawing.Bitmap _1_10 {
             get {
-                object obj = ResourceManager.GetObject("10", resourceCulture);
+                object obj = ResourceManager.GetObject("1.10", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace Labirint.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _2 {
+        internal static System.Drawing.Bitmap _1_2 {
             get {
-                object obj = ResourceManager.GetObject("2", resourceCulture);
+                object obj = ResourceManager.GetObject("1.2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace Labirint.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _3 {
+        internal static System.Drawing.Bitmap _1_3 {
             get {
-                object obj = ResourceManager.GetObject("3", resourceCulture);
+                object obj = ResourceManager.GetObject("1.3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace Labirint.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _4 {
+        internal static System.Drawing.Bitmap _1_4 {
             get {
-                object obj = ResourceManager.GetObject("4", resourceCulture);
+                object obj = ResourceManager.GetObject("1.4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace Labirint.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _5 {
+        internal static System.Drawing.Bitmap _1_5 {
             get {
-                object obj = ResourceManager.GetObject("5", resourceCulture);
+                object obj = ResourceManager.GetObject("1.5", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +123,9 @@ namespace Labirint.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _6 {
+        internal static System.Drawing.Bitmap _1_6 {
             get {
-                object obj = ResourceManager.GetObject("6", resourceCulture);
+                object obj = ResourceManager.GetObject("1.6", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +133,9 @@ namespace Labirint.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _7 {
+        internal static System.Drawing.Bitmap _1_7 {
             get {
-                object obj = ResourceManager.GetObject("7", resourceCulture);
+                object obj = ResourceManager.GetObject("1.7", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +143,9 @@ namespace Labirint.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _8 {
+        internal static System.Drawing.Bitmap _1_8 {
             get {
-                object obj = ResourceManager.GetObject("8", resourceCulture);
+                object obj = ResourceManager.GetObject("1.8", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +153,9 @@ namespace Labirint.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _9 {
+        internal static System.Drawing.Bitmap _1_9 {
             get {
-                object obj = ResourceManager.GetObject("9", resourceCulture);
+                object obj = ResourceManager.GetObject("1.9", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

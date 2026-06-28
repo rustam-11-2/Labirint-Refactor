@@ -96,8 +96,8 @@ namespace Labirint
 
         private void dataGridViewLabirint_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Rectangle rec = dataGridViewLabirint.GetCellDisplayRectangle(0, 0, false);
-            MessageBox.Show($"{rec.Height} {rec.Width}");
+            //Rectangle rec = dataGridViewLabirint.GetCellDisplayRectangle(0, 0, false);
+            //MessageBox.Show($"{rec.Height} {rec.Width}");
             if (e.RowIndex == 1 || e.RowIndex == 2)
             { 
                 dataGridViewLabirint.ClearSelection();
