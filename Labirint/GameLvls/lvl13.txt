@@ -1,0 +1,6 @@
+н д о а н б
+1 2 3 4 5 6
+7 8 9 10 11 12
+б а н д о н
+0
+chair.png Bed.png flower.png

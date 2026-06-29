@@ -1,0 +1,6 @@
+р с х ы æ
+1 2 3 4 5
+6 7 8 9 10
+æ х с ы р
+1
+raspberry.png milk.png human.png
