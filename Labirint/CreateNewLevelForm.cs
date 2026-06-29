@@ -92,7 +92,8 @@ namespace Labirint
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CreateNewLvl(); 
+            CreateNewLvl();
+            MessageBox.Show("Уровень сохранён");
         }
 
         private void buttonSaveImageFirst_Click(object sender, EventArgs e)
