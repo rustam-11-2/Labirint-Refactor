@@ -80,8 +80,12 @@ namespace Labirint
                     }
                 }
 
+                for(int i = 0; i < 3; i++)
+                {
+                    imageNames.Add(pictureBoxes[i].Name);
+                }
                 File.AppendAllText(@$"GameLvls\\lvl{countLvl}.txt", string.Join(" ", imageNames) + Environment.NewLine);
-
+                imageNames.Clear();
             }
         }
 
@@ -102,8 +106,9 @@ namespace Labirint
                 string destFileName = $"ImagesMeaningsOfWords\\{openFileDialog1.SafeFileName}";
                 File.Copy(openFileDialog1.FileName, destFileName, true);
                 pictureBoxes[indPicBox].Image = Bitmap.FromFile(destFileName);
-                string fileName = openFileDialog1.SafeFileName;
-                imageNames.Add(fileName);
+                pictureBoxes[indPicBox].Name = openFileDialog1.SafeFileName;
+                //string fileName = openFileDialog1.SafeFileName;
+                //imageNames.Add(fileName);
             }
         }
     }
