@@ -103,10 +103,17 @@ namespace Labirint
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                string destFileName = $"ImagesMeaningsOfWords\\{openFileDialog1.SafeFileName}";
-                File.Copy(openFileDialog1.FileName, destFileName, true);
-                pictureBoxes[indPicBox].Image = Bitmap.FromFile(destFileName);
-                pictureBoxes[indPicBox].Name = openFileDialog1.SafeFileName;
+                try
+                {
+                    string destFileName = $"ImagesMeaningsOfWords\\{openFileDialog1.SafeFileName}";
+                    File.Copy(openFileDialog1.FileName, destFileName, true);
+                    pictureBoxes[indPicBox].Image = Bitmap.FromFile(destFileName);
+                    pictureBoxes[indPicBox].Name = openFileDialog1.SafeFileName;
+                }
+                catch 
+                {
+                    MessageBox.Show("Нельзя использовать картинку дважды");
+                }
                 //string fileName = openFileDialog1.SafeFileName;
                 //imageNames.Add(fileName);
             }

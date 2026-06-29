@@ -118,7 +118,7 @@ namespace Labirint
             if(gameField.CheckAnswer(selectedLetter, cell))
             {
                 soundManager.PlayCorrect();
-                dataGridViewLabirint.Rows[cell.Y].Cells[cell.X].Value = Bitmap.FromFile($"Images/{selectedLetter.Letter}.png"); // Resources.ResourceManager.GetObject(selectedLetter.Letter);
+                dataGridViewLabirint.Rows[cell.Y].Cells[cell.X].Value = Bitmap.FromFile($"Images/{selectedLetter.Letter}.png"); 
 
                 if (gameField.AllLetterWasFind())
                 {

@@ -37,9 +37,9 @@
             // 
             this.flowLayoutPanelLvls.AutoScroll = true;
             this.flowLayoutPanelLvls.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.flowLayoutPanelLvls.Location = new System.Drawing.Point(148, 109);
+            this.flowLayoutPanelLvls.Location = new System.Drawing.Point(73, 101);
             this.flowLayoutPanelLvls.Name = "flowLayoutPanelLvls";
-            this.flowLayoutPanelLvls.Size = new System.Drawing.Size(298, 261);
+            this.flowLayoutPanelLvls.Size = new System.Drawing.Size(449, 277);
             this.flowLayoutPanelLvls.TabIndex = 0;
             // 
             // buttonBackToMenu
@@ -79,7 +79,7 @@
             this.Controls.Add(this.buttonBackToMenu);
             this.Controls.Add(this.flowLayoutPanelLvls);
             this.Name = "NewFormSelectLvl";
-            this.Text = "NewFormSelectLvl";
+            this.Text = "Выбор уровня";
             this.Load += new System.EventHandler(this.NewFormSelectLvl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

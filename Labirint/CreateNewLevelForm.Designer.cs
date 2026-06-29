@@ -54,9 +54,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(327, 404);
+            this.button1.Location = new System.Drawing.Point(316, 404);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(146, 23);
+            this.button1.Size = new System.Drawing.Size(168, 23);
             this.button1.TabIndex = 1;
             this.button1.Text = "Сохранить уровень";
             this.button1.UseVisualStyleBackColor = true;
@@ -183,7 +183,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBoxAnswer);
             this.Name = "CreateNewLevelForm";
-            this.Text = "CreateNewLevelForm";
+            this.Text = "Создание уровня";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

@@ -54,6 +54,7 @@
             this.dataGridViewLabirint.ColumnHeadersVisible = false;
             this.dataGridViewLabirint.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataGridViewLabirint.Location = new System.Drawing.Point(221, 76);
+            this.dataGridViewLabirint.MultiSelect = false;
             this.dataGridViewLabirint.Name = "dataGridViewLabirint";
             this.dataGridViewLabirint.ReadOnly = true;
             this.dataGridViewLabirint.RowHeadersVisible = false;
@@ -95,9 +96,9 @@
             // pictureBox3
             // 
             this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox3.Location = new System.Drawing.Point(29, 231);
+            this.pictureBox3.Location = new System.Drawing.Point(31, 268);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(100, 60);
+            this.pictureBox3.Size = new System.Drawing.Size(90, 90);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 4;
             this.pictureBox3.TabStop = false;
@@ -106,9 +107,9 @@
             // pictureBox2
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox2.Location = new System.Drawing.Point(29, 153);
+            this.pictureBox2.Location = new System.Drawing.Point(31, 172);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 60);
+            this.pictureBox2.Size = new System.Drawing.Size(90, 90);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
@@ -117,9 +118,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Location = new System.Drawing.Point(29, 76);
+            this.pictureBox1.Location = new System.Drawing.Point(31, 76);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 60);
+            this.pictureBox1.Size = new System.Drawing.Size(90, 90);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
