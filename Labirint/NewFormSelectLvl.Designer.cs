@@ -31,6 +31,7 @@
             this.flowLayoutPanelLvls = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonBackToMenu = new System.Windows.Forms.Button();
             this.labelLvl = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // flowLayoutPanelLvls
@@ -70,16 +71,34 @@
             this.labelLvl.Text = "Выберите уровень";
             this.labelLvl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.AutoSize = true;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century", 12F);
+            this.button1.Location = new System.Drawing.Point(324, 431);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(248, 35);
+            this.button1.TabIndex = 7;
+            this.button1.TabStop = false;
+            this.button1.Text = "Создать новый уровень";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // NewFormSelectLvl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(594, 478);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.labelLvl);
             this.Controls.Add(this.buttonBackToMenu);
             this.Controls.Add(this.flowLayoutPanelLvls);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "NewFormSelectLvl";
             this.Text = "Выбор уровня";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NewFormSelectLvl_FormClosed);
             this.Load += new System.EventHandler(this.NewFormSelectLvl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -91,5 +110,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelLvls;
         private System.Windows.Forms.Button buttonBackToMenu;
         private System.Windows.Forms.Label labelLvl;
+        private System.Windows.Forms.Button button1;
     }
 }

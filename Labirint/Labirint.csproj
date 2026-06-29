@@ -76,12 +76,6 @@
     <Compile Include="FormLabirint.Designer.cs">
       <DependentUpon>FormLabirint.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormLevelSelect.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormLevelSelect.Designer.cs">
-      <DependentUpon>FormLevelSelect.cs</DependentUpon>
-    </Compile>
     <Compile Include="GameField.cs" />
     <Compile Include="GameMainMenu.cs">
       <SubType>Form</SubType>
@@ -104,9 +98,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormLabirint.resx">
       <DependentUpon>FormLabirint.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormLevelSelect.resx">
-      <DependentUpon>FormLevelSelect.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GameMainMenu.resx">
       <DependentUpon>GameMainMenu.cs</DependentUpon>

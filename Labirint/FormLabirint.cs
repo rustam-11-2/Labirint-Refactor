@@ -137,5 +137,10 @@ namespace Labirint
             this.Close();
             newFormSelectLvl.Visible = true;
         }
+
+        private void FormLabirint_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
