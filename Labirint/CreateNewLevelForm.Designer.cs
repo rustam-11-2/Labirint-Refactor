@@ -48,16 +48,17 @@
             // 
             // textBoxAnswer
             // 
-            this.textBoxAnswer.Location = new System.Drawing.Point(350, 50);
+            this.textBoxAnswer.Location = new System.Drawing.Point(321, 50);
             this.textBoxAnswer.Name = "textBoxAnswer";
-            this.textBoxAnswer.Size = new System.Drawing.Size(100, 22);
+            this.textBoxAnswer.Size = new System.Drawing.Size(159, 22);
             this.textBoxAnswer.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(316, 404);
+            this.button1.Font = new System.Drawing.Font("Century", 12F);
+            this.button1.Location = new System.Drawing.Point(253, 405);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(168, 23);
+            this.button1.Size = new System.Drawing.Size(295, 33);
             this.button1.TabIndex = 1;
             this.button1.Text = "Сохранить уровень";
             this.button1.UseVisualStyleBackColor = true;
@@ -71,18 +72,19 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.pictureBox1.ErrorImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(144, 127);
+            this.pictureBox1.Location = new System.Drawing.Point(121, 100);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(112, 134);
+            this.pictureBox1.Size = new System.Drawing.Size(159, 134);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
             // buttonSaveImageOne
             // 
-            this.buttonSaveImageOne.Location = new System.Drawing.Point(144, 276);
+            this.buttonSaveImageOne.Font = new System.Drawing.Font("Century", 12F);
+            this.buttonSaveImageOne.Location = new System.Drawing.Point(121, 249);
             this.buttonSaveImageOne.Name = "buttonSaveImageOne";
-            this.buttonSaveImageOne.Size = new System.Drawing.Size(112, 56);
+            this.buttonSaveImageOne.Size = new System.Drawing.Size(159, 75);
             this.buttonSaveImageOne.TabIndex = 3;
             this.buttonSaveImageOne.Tag = "0";
             this.buttonSaveImageOne.Text = "Добавить изображение";
@@ -91,9 +93,10 @@
             // 
             // buttonSaveImageTwo
             // 
-            this.buttonSaveImageTwo.Location = new System.Drawing.Point(344, 276);
+            this.buttonSaveImageTwo.Font = new System.Drawing.Font("Century", 12F);
+            this.buttonSaveImageTwo.Location = new System.Drawing.Point(321, 249);
             this.buttonSaveImageTwo.Name = "buttonSaveImageTwo";
-            this.buttonSaveImageTwo.Size = new System.Drawing.Size(112, 56);
+            this.buttonSaveImageTwo.Size = new System.Drawing.Size(159, 75);
             this.buttonSaveImageTwo.TabIndex = 5;
             this.buttonSaveImageTwo.Tag = "1";
             this.buttonSaveImageTwo.Text = "Добавить изображение";
@@ -103,18 +106,19 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.pictureBox2.Location = new System.Drawing.Point(344, 127);
+            this.pictureBox2.Location = new System.Drawing.Point(321, 100);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(112, 134);
+            this.pictureBox2.Size = new System.Drawing.Size(159, 134);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
             // 
             // buttonSaveImageThree
             // 
-            this.buttonSaveImageThree.Location = new System.Drawing.Point(544, 276);
+            this.buttonSaveImageThree.Font = new System.Drawing.Font("Century", 12F);
+            this.buttonSaveImageThree.Location = new System.Drawing.Point(521, 249);
             this.buttonSaveImageThree.Name = "buttonSaveImageThree";
-            this.buttonSaveImageThree.Size = new System.Drawing.Size(112, 56);
+            this.buttonSaveImageThree.Size = new System.Drawing.Size(159, 75);
             this.buttonSaveImageThree.TabIndex = 7;
             this.buttonSaveImageThree.Tag = "2";
             this.buttonSaveImageThree.Text = "Добавить изображение";
@@ -124,9 +128,9 @@
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.pictureBox3.Location = new System.Drawing.Point(544, 127);
+            this.pictureBox3.Location = new System.Drawing.Point(521, 100);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(112, 134);
+            this.pictureBox3.Size = new System.Drawing.Size(159, 134);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 6;
             this.pictureBox3.TabStop = false;
@@ -134,7 +138,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(144, 339);
+            this.radioButton1.Location = new System.Drawing.Point(121, 330);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(151, 20);
             this.radioButton1.TabIndex = 8;
@@ -146,7 +150,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(344, 339);
+            this.radioButton2.Location = new System.Drawing.Point(321, 330);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(151, 20);
             this.radioButton2.TabIndex = 9;
@@ -158,7 +162,7 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(544, 339);
+            this.radioButton3.Location = new System.Drawing.Point(521, 330);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(151, 20);
             this.radioButton3.TabIndex = 10;
