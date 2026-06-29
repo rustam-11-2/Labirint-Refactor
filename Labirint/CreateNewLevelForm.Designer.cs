@@ -40,6 +40,7 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.buttonBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -166,11 +167,27 @@
             this.radioButton3.Text = "Правильный ответ";
             this.radioButton3.UseVisualStyleBackColor = true;
             // 
+            // buttonBack
+            // 
+            this.buttonBack.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonBack.AutoSize = true;
+            this.buttonBack.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonBack.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonBack.Location = new System.Drawing.Point(12, 405);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(94, 33);
+            this.buttonBack.TabIndex = 11;
+            this.buttonBack.TabStop = false;
+            this.buttonBack.Text = "Отмена";
+            this.buttonBack.UseVisualStyleBackColor = true;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            // 
             // CreateNewLevelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.radioButton3);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
@@ -206,5 +223,6 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.Button buttonBack;
     }
 }

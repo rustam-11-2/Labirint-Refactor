@@ -15,6 +15,7 @@ namespace Labirint
         public CreateNewLevelForm()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             imageNames = new List<string>();
             radioButtons = this.Controls.OfType<RadioButton>().Reverse().ToArray();
             pictureBoxes = this.Controls.OfType<PictureBox>().Reverse().ToArray();
@@ -117,6 +118,14 @@ namespace Labirint
                 //string fileName = openFileDialog1.SafeFileName;
                 //imageNames.Add(fileName);
             }
+        }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            NewFormSelectLvl form = new NewFormSelectLvl();
+
+            this.Close();
+            form.Show();
         }
     }
 }

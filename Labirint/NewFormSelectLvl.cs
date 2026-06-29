@@ -74,7 +74,10 @@ namespace Labirint
 
         private void button1_Click(object sender, EventArgs e)
         {
+            CreateNewLevelForm form = new CreateNewLevelForm();
 
+            this.Hide();
+            form.Show();
         }
     }
 }
