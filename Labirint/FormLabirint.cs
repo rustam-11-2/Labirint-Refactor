@@ -58,18 +58,16 @@ namespace Labirint
         void ShowField(DataGridView dG, GameField f)
         {
             for (int i = 0; i < pictureBoxes.Length; i++)
-                pictureBoxes[i].Image = Bitmap.FromFile($"ImagesMeaningsOfWords\\{gameField.Level.PictureBoxImages[i]}.png");
+                pictureBoxes[i].Image = Bitmap.FromFile($"ImagesMeaningsOfWords\\{gameField.Level.PictureBoxImagesName[i]}");
 
-            for (int i = 0; i < gameField.GAMEMATRIXROWCOUNT; i++)
+            for (int i = 0; i < f.Level.LvlWord.Length; i++)
             {
-                for(int j = 0; j < f.Level.LvlWord.Length; j++)
-                {
-                    if (gameField.Cells[i,j].Type == CellType.EmptyCell)
-                        dG.Rows[i].Cells[j].Value = Resources.emptyCell;
-                    else
-                        dG.Rows[i].Cells[j].Value = Resources.ResourceManager.GetObject(f.Matrix(i, j));
-                }
-            }       
+                dG.Rows[0].Cells[i].Value = Bitmap.FromFile($"Images/{f.Level.LvlRandomWord[i]}.png");
+                dG.Rows[1].Cells[i].Value = Bitmap.FromFile($"ImageThreadsTypeOne/{f.Level.LevelType}.{i + 1}.png");
+                dG.Rows[2].Cells[i].Value = Bitmap.FromFile($"ImageThreadsTypeOne/{f.Level.LevelType}.{i + f.Level.LvlWord.Length + 1}.png");
+                dG.Rows[3].Cells[i].Value = Bitmap.FromFile($"Images/6.png");
+            }
+
         }
 
         bool IsCorrectChoice(string objName)
@@ -120,7 +118,7 @@ namespace Labirint
             if(gameField.CheckAnswer(selectedLetter, cell))
             {
                 soundManager.PlayCorrect();
-                dataGridViewLabirint.Rows[cell.Y].Cells[cell.X].Value = Resources.ResourceManager.GetObject(selectedLetter.Letter);
+                dataGridViewLabirint.Rows[cell.Y].Cells[cell.X].Value = Bitmap.FromFile($"Images/{selectedLetter.Letter}.png"); // Resources.ResourceManager.GetObject(selectedLetter.Letter);
 
                 if (gameField.AllLetterWasFind())
                 {
