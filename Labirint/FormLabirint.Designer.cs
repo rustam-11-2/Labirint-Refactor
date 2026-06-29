@@ -140,7 +140,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormLabirint";
             this.Text = "Лабиринт";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormLabirint_FormClosed);
             this.Load += new System.EventHandler(this.FormLabirint_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLabirint)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

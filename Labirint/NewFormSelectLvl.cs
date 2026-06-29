@@ -70,10 +70,7 @@ namespace Labirint
             gameMainMenu.Show();
         }
 
-        private void NewFormSelectLvl_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
