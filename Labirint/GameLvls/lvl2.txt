@@ -3,4 +3,4 @@
 6 7 8 9 10
 б а з ы р
 0
-wing tree phone
+wing.png tree.png phone.png

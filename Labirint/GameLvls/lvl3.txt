@@ -3,4 +3,4 @@
 6 7 8 9 10
 х æ р æ г
 2
-book glasses donkey
+book.png glasses.png donkey.png
