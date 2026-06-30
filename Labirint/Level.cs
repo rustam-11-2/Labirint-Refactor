@@ -11,7 +11,6 @@ namespace Labirint
         public string[] LvlWord { get ; set; }
         public int PictureBoxCorrextIndex { get; set; }
         public string[] PictureBoxImagesName { get ; set; }
-        public PictureBox[] PictureBoxes { get; set; }
         public int LevelType { get; private set; }
 
         
