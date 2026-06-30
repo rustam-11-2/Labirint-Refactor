@@ -62,10 +62,6 @@ namespace Labirint
             }
         }
 
-        public string Matrix(int x, int y)
-        {
-            return Cells[x, y].Letter;
-        }
 
         public bool CheckAnswer(Cell selectedLetter, Cell answer)
         {
